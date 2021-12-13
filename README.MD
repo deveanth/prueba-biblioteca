@@ -24,3 +24,4 @@
 
 1.  Ejecutar el comando **yarn install** dentro de la carpeta client.
 2.  Ejecutar el comando **yarn dev** dentro de la carpeta client para iniciar el cliente.
+3. Abrir en el navegadpr la siguiente url http://localhost:3000/
