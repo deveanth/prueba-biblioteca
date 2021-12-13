@@ -4,12 +4,12 @@ import { User } from "@user/models/user-entity";
 @Entity()
 export class Book {
 	@PrimaryGeneratedColumn()
-	id!: number;
+	id: number;
 
 	@Column({
 		unique: true,
 	})
-	name!: string;
+	name: string;
 
 	@Column({
 		default: true,
@@ -17,5 +17,5 @@ export class Book {
 	isAvailable: boolean = true;
 
 	@ManyToOne(() => User, (user: User) => user.books)
-	user!: User;
+	user: User;
 }

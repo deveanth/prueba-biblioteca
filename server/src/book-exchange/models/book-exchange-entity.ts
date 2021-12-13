@@ -9,14 +9,14 @@ export enum TypeBookExchange {
 @Entity()
 export class BookExchange {
 	@PrimaryGeneratedColumn()
-	id!: number;
+	id: number;
 
 	@Column({
 		type: "enum",
 		enum: TypeBookExchange,
 		default: TypeBookExchange.LEND,
 	})
-	typeBookExchange!: TypeBookExchange;
+	typeBookExchange: TypeBookExchange;
 
 	@Column()
 	date: Date = new Date();

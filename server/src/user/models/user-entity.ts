@@ -4,13 +4,13 @@ import { Book } from "@book/models/book-entity";
 @Entity()
 export class User {
 	@PrimaryGeneratedColumn()
-	id!: number;
+	id: number;
 
 	@Column({
 		unique: true,
 	})
-	name!: string;
+	name: string;
 
 	@OneToMany(() => Book, (book: Book) => book.user)
-	books!: Book[];
+	books: Book[];
 }
