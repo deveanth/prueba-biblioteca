@@ -2,7 +2,7 @@
 
 ---
 
-## Crear en postgres una base de datos con el nombre: **library-test**.
+## Crear en postgres una base de datos con el nombre: **library-test**
 
 ### Configuración del archivo .env
 
