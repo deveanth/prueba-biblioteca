@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import BookExchange_ from "./index";
-import { BookExchange } from "@types";
+import { BookExchange, TypeBookExchange } from "@types";
 import { FindAllBookExchange } from "@helpers/book-exchange-api";
 
 const ListarPrestamos = () => {
@@ -11,6 +11,14 @@ const ListarPrestamos = () => {
 		const time = Date.parse(_date);
 		const date = new Date(time);
 		return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+	};
+
+	const formatTypeBookExchange = (typeBookExchange: TypeBookExchange) => {
+		if (typeBookExchange === "lend") {
+			return "Prestamo";
+		} else {
+			return "Devolución";
+		}
 	};
 
 	const listBookExchange = async () => {
@@ -64,7 +72,9 @@ const ListarPrestamos = () => {
 									<td>{formatDate(bookExchange.date)}</td>
 									<td>{bookExchange.nameUser}</td>
 									<td>{bookExchange.nameBook}</td>
-									<td>{bookExchange.typeBookExchange}</td>
+									<td>
+										{formatTypeBookExchange(bookExchange.typeBookExchange)}
+									</td>
 								</tr>
 							))}
 						</tbody>
